@@ -129,26 +129,20 @@ describe("caesarCipher function", () => {
 
 describe("analyzeArray function", () => {
     test("array of numbers check", () => {
-        expect(analyzeArray[(1, null, "foo")]).toBe("Invalid Array");
+        expect(analyzeArray()).toEqual("Invalid Array");
+        expect(analyzeArray([1, null, "foo"])).toEqual("Invalid Array");
+        expect(analyzeArray([])).toEqual("Invalid Array");
     });
     test("simple array check", () => {
-        expect(analyzeArray([1, 8, 3, 4, 2, 6])).toBe({
+        expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
             average: 4,
             min: 1,
             max: 8,
             length: 6,
         });
     });
-    test("no element array check", () => {
-        expect(analyzeArray([])).toBe({
-            average: null,
-            min: null,
-            max: null,
-            length: null,
-        });
-    });
     test("repetitive element array check", () => {
-        expect(analyzeArray([1, 1, 2, 3])).toBe({
+        expect(analyzeArray([1, 1, 2, 3])).toEqual({
             average: 1.75,
             min: 1,
             max: 8,
@@ -156,7 +150,7 @@ describe("analyzeArray function", () => {
         });
     });
     test("all same element array check", () => {
-        expect(analyzeArray([1, 1, 1, 1])).toBe({
+        expect(analyzeArray([1, 1, 1, 1])).toEqual({
             average: 1,
             min: 1,
             max: 1,

@@ -58,6 +58,13 @@ function caesarCipher(str, shift) {
     return newStr;
 }
 
-function analyzeArray() {}
+function analyzeArray(arr = []) {
+    if (arr.length === 0) return "Invalid Array";
+    else {
+        for (let element of arr) {
+            if (typeof element != "number") return "Invalid Array";
+        }
+    }
+}
 
 export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };
