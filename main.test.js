@@ -71,4 +71,21 @@ describe("calculator function", () => {
             expect(calculator("-", 1, 2, 3)).toBe(-4);
         });
     });
+    describe("multiplication", () => {
+        test("Multiply two integer numbers", () => {
+            expect(calculator("*", 1, 2)).toBe(2);
+        });
+        test("Multiply two floating point numbers", () => {
+            expect(calculator("*", 2.5, 2.5)).toBeCloseTo(6.25);
+        });
+        test("Multiply one integer and one floating point numbers", () => {
+            expect(calculator("*", 1.5, 2)).toBeCloseTo(3.0);
+        });
+        test("Multiply multiple numbers", () => {
+            expect(calculator("*", 1, 2, 3)).toBe(6);
+        });
+        test("Multiply by zero", () => {
+            expect(calculator("*", 3, 0)).toBe(0);
+        });
+    });
 });
