@@ -47,5 +47,8 @@ describe("calculator function", () => {
         test("add one integer and one floating point numbers", () => {
             expect(calculator("+", 1.5, 2)).toBeCloseTo(3.5);
         });
+        test("add multiple numbers", () => {
+            expect(calculator("+", 1, 2, 3)).toBe(6);
+        });
     });
 });
