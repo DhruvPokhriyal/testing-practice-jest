@@ -1,4 +1,4 @@
-import { capitalize, reverseString } from "./main";
+import { capitalize, reverseString, calculator, caesarCipher } from "./main";
 
 describe("capitalize function", () => {
     test("Capitalize the given string", () => {
@@ -33,5 +33,19 @@ describe("reverseString function", () => {
         for (const testCase of testCases) {
             expect(reverseString(testCase.input)).toBe(testCase.output);
         }
+    });
+});
+
+describe("calculator function", () => {
+    describe("addition", () => {
+        test("add two integer numbers", () => {
+            expect(calculator("+", 1, 2)).toBe(3);
+        });
+        test("add two floating point numbers", () => {
+            expect(calculator("+", 2.5, 2.5)).toBeCloseTo(5.0);
+        });
+        test("add one integer and one floating point numbers", () => {
+            expect(calculator("+", 1.5, 2)).toBeCloseTo(3.5);
+        });
     });
 });
