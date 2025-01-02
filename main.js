@@ -38,12 +38,15 @@ function caesarCipher(str, shift) {
         return alphabet.includes(char.toLowerCase());
     }
 
+    function newIndex(char, shift) {
+        return (alphabet.indexOf(char.toLowerCase()) + shift) % 26;
+    }
+
     let newStr = "";
     for (let i = 0; i < str.length; i++) {
         let newLetter = null;
         if (isAlpha(str[i])) {
-            let newLetterAbsolute =
-                alphabet[(alphabet.indexOf(str[i].toLowerCase()) + shift) % 26];
+            let newLetterAbsolute = alphabet[newIndex(str[i], shift)];
             newLetter =
                 str[i] === str[i].toUpperCase()
                     ? newLetterAbsolute.toUpperCase()
