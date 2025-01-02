@@ -27,7 +27,7 @@ function calculator(sign, ...numbers) {
                     return "Invalid Operation!! Division by Zero is not possible";
                 }
             }
-            return numbers.reduce((total, prev) => total / prev, 1);
+            return numbers.reduce((total, prev) => total / prev);
     }
 }
 

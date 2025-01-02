@@ -84,8 +84,27 @@ describe("calculator function", () => {
         test("Multiply multiple numbers", () => {
             expect(calculator("*", 1, 2, 3)).toBe(6);
         });
-        test("Multiply by zero", () => {
+        test("Multiplication by zero", () => {
             expect(calculator("*", 3, 0)).toBe(0);
+        });
+    });
+    describe("division", () => {
+        test("Divide two integer numbers", () => {
+            expect(calculator("/", 1, 2)).toBeCloseTo(0.5);
+        });
+        test("Divide two floating point numbers", () => {
+            expect(calculator("/", 2.5, 2.5)).toBeCloseTo(1.0);
+        });
+        test("Divide one integer and one floating point numbers", () => {
+            expect(calculator("/", 1.5, 2)).toBeCloseTo(0.75);
+        });
+        test("Divide multiple numbers", () => {
+            expect(calculator("/", 1, 2, 3)).toBeCloseTo(0.166);
+        });
+        test("Division by zero", () => {
+            expect(calculator("/", 3, 0)).toBe(
+                "Invalid Operation!! Division by Zero is not possible"
+            );
         });
     });
 });
