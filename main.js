@@ -12,7 +12,18 @@ function reverseString(str) {
     return revStr;
 }
 
-function calculator() {}
+function calculator(sign, ...numbers) {
+    switch (sign) {
+        case "+":
+            return numbers.reduce((total, prev) => total + prev, 0);
+        case "-":
+            return numbers.reduce((total, prev) => total - prev, 0);
+        case "*":
+            return numbers.reduce((total, prev) => total * prev, 1);
+        case "/":
+            return numbers.reduce((total, prev) => total / prev, 1);
+    }
+}
 
 function caesarCipher() {}
 
