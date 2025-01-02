@@ -33,10 +33,15 @@ function calculator(sign, ...numbers) {
 
 function caesarCipher(str, shift) {
     const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+
+    function isAlpha(char) {
+        return alphabet.includes(char.toLowerCase());
+    }
+
     let newStr = "";
     for (let i = 0; i < str.length; i++) {
         let newLetter = null;
-        if (alphabet.includes(str[i].toLowerCase())) {
+        if (isAlpha(str[i])) {
             let newLetterAbsolute =
                 alphabet[(alphabet.indexOf(str[i].toLowerCase()) + shift) % 26];
             newLetter =
