@@ -64,6 +64,18 @@ function analyzeArray(arr = []) {
         for (let element of arr) {
             if (typeof element != "number") return "Invalid Array";
         }
+        let length = arr.length;
+        if (length == 1) {
+            return { average: arr[0], min: arr[0], max: arr[0], length };
+        }
+        let average = arr.reduce((total, cur) => total + cur, 0) / length;
+        let min = arr[0];
+        let max = arr[0];
+        for (let i = 1; i < length; i++) {
+            if (arr[i] > max) max = arr[i];
+            if (arr[i] < min) min = arr[i];
+        }
+        return { average, min, max, length };
     }
 }
 

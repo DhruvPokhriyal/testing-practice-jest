@@ -145,8 +145,8 @@ describe("analyzeArray function", () => {
         expect(analyzeArray([1, 1, 2, 3])).toEqual({
             average: 1.75,
             min: 1,
-            max: 8,
-            length: 6,
+            max: 3,
+            length: 4,
         });
     });
     test("all same element array check", () => {
