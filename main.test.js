@@ -37,6 +37,12 @@ describe("reverseString function", () => {
 });
 
 describe("calculator function", () => {
+    test("Minimum no of input", () => {
+        expect(calculator("+", 1)).toBe("Input less than minimum no of inputs");
+        expect(calculator("-", 1)).toBe("Input less than minimum no of inputs");
+        expect(calculator("*", 1)).toBe("Input less than minimum no of inputs");
+        expect(calculator("/", 1)).toBe("Input less than minimum no of inputs");
+    });
     describe("addition", () => {
         test("add two integer numbers", () => {
             expect(calculator("+", 1, 2)).toBe(3);

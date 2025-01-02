@@ -13,6 +13,7 @@ function reverseString(str) {
 }
 
 function calculator(sign, ...numbers) {
+    if (numbers.length == 1) return "Input less than minimum no of inputs";
     switch (sign) {
         case "+":
             return numbers.reduce((total, prev) => total + prev, 0);
@@ -21,6 +22,11 @@ function calculator(sign, ...numbers) {
         case "*":
             return numbers.reduce((total, prev) => total * prev, 1);
         case "/":
+            for (let i = 1; i < numbers.length; i++) {
+                if (numbers[i] == 0) {
+                    return "Invalid Operation!! Division by Zero is not possible";
+                }
+            }
             return numbers.reduce((total, prev) => total / prev, 1);
     }
 }
