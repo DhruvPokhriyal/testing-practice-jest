@@ -157,4 +157,12 @@ describe("analyzeArray function", () => {
             length: 4,
         });
     });
+    test("single element check", () => {
+        expect(analyzeArray([1])).toEqual({
+            average: 1,
+            min: 1,
+            max: 1,
+            length: 1,
+        });
+    });
 });
