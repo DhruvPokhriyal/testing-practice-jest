@@ -18,7 +18,7 @@ function calculator(sign, ...numbers) {
         case "+":
             return numbers.reduce((total, prev) => total + prev, 0);
         case "-":
-            return numbers.reduce((total, prev) => total - prev, 0);
+            return numbers.reduce((total, prev) => total - prev);
         case "*":
             return numbers.reduce((total, prev) => total * prev, 1);
         case "/":

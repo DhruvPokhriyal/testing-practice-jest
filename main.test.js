@@ -57,4 +57,18 @@ describe("calculator function", () => {
             expect(calculator("+", 1, 2, 3)).toBe(6);
         });
     });
+    describe("subtraction", () => {
+        test("subtract two integer numbers", () => {
+            expect(calculator("-", 1, 2)).toBe(-1);
+        });
+        test("subtract two floating point numbers", () => {
+            expect(calculator("-", 2.5, 2.5)).toBeCloseTo(0.0);
+        });
+        test("subtract one integer and one floating point numbers", () => {
+            expect(calculator("-", 1.5, 2)).toBeCloseTo(-0.5);
+        });
+        test("subtract multiple numbers", () => {
+            expect(calculator("-", 1, 2, 3)).toBe(-4);
+        });
+    });
 });
