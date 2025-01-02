@@ -6,4 +6,14 @@ function capitalize(str) {
     return words.join(" ");
 }
 
-export { capitalize };
+function reverseString(str) {
+    let revStr = "";
+    for (let i = str.length - 1; i >= 0; i--) revStr = revStr + str[i];
+    return revStr;
+}
+
+function calculator() {}
+
+function caesarCipher() {}
+
+export { capitalize, reverseString, calculator, caesarCipher };

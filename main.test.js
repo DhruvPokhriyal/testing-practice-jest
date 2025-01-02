@@ -25,4 +25,13 @@ describe("reverseString function", () => {
             expect(reverseString(testCase.input)).toBe(testCase.output);
         }
     });
+    test("reverse complex string", () => {
+        const testCases = [
+            { input: "12 Data !@", output: "@! ataD 21" },
+            { input: "#214 ErE", output: "ErE 412#" },
+        ];
+        for (const testCase of testCases) {
+            expect(reverseString(testCase.input)).toBe(testCase.output);
+        }
+    });
 });
