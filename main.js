@@ -31,6 +31,23 @@ function calculator(sign, ...numbers) {
     }
 }
 
-function caesarCipher() {}
+function caesarCipher(str, shift) {
+    const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+    let newStr = "";
+    for (let i = 0; i < str.length; i++) {
+        let newLetter = null;
+        if (alphabet.includes(str[i].toLowerCase())) {
+            let newLetterAbsolute =
+                alphabet[(alphabet.indexOf(str[i].toLowerCase()) + shift) % 26];
+            newLetter =
+                str[i] === str[i].toUpperCase()
+                    ? newLetterAbsolute.toUpperCase()
+                    : newLetterAbsolute.toLowerCase();
+        }
+        newLetter = newLetter || str[i];
+        newStr = newStr + newLetter;
+    }
+    return newStr;
+}
 
 export { capitalize, reverseString, calculator, caesarCipher };
