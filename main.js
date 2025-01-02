@@ -58,4 +58,6 @@ function caesarCipher(str, shift) {
     return newStr;
 }
 
-export { capitalize, reverseString, calculator, caesarCipher };
+function analyzeArray() {}
+
+export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };

@@ -1,4 +1,10 @@
-import { capitalize, reverseString, calculator, caesarCipher } from "./main";
+import {
+    capitalize,
+    reverseString,
+    calculator,
+    caesarCipher,
+    analyzeArray,
+} from "./main";
 
 describe("capitalize function", () => {
     test("Capitalize the given string", () => {
@@ -118,5 +124,43 @@ describe("caesarCipher function", () => {
     });
     test("Punctuation test", () => {
         expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+    });
+});
+
+describe("analyzeArray function", () => {
+    test("array of numbers check", () => {
+        expect(analyzeArray[(1, null, "foo")]).toBe("Invalid Array");
+    });
+    test("simple array check", () => {
+        expect(analyzeArray([1, 8, 3, 4, 2, 6])).toBe({
+            average: 4,
+            min: 1,
+            max: 8,
+            length: 6,
+        });
+    });
+    test("no element array check", () => {
+        expect(analyzeArray([])).toBe({
+            average: null,
+            min: null,
+            max: null,
+            length: null,
+        });
+    });
+    test("repetitive element array check", () => {
+        expect(analyzeArray([1, 1, 2, 3])).toBe({
+            average: 1.75,
+            min: 1,
+            max: 8,
+            length: 6,
+        });
+    });
+    test("all same element array check", () => {
+        expect(analyzeArray([1, 1, 1, 1])).toBe({
+            average: 1,
+            min: 1,
+            max: 1,
+            length: 4,
+        });
     });
 });
